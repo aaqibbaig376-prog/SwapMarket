@@ -3,7 +3,7 @@
 ## Project Name: SwapMarket 👗♻️
 **Tagline:** Sustainable Clothing Exchange Marketplace  
 **Version:** 1.0.0  
-**Author:** Antigravity AI & Aaqib Baig  
+**Author:** Mirza Aaqib Baig  
 **Status:** Production Ready / Deployed  
 
 ---
