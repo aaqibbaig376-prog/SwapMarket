@@ -1,0 +1,19 @@
+{
+  "name": "clothingmarket",
+  "version": "1.0.0",
+  "description": "Clothing Exchange Marketplace",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npx nodemon server.js",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^10.0.4"
+  }
+}
