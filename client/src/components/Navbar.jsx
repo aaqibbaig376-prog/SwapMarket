@@ -54,7 +54,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center text-primary text-2xl font-bold">
           <FaRecycle className="mr-2" />
-          SwapStyle
+          SwapMarket
         </Link>
         <div className="flex items-center space-x-5">
           <button

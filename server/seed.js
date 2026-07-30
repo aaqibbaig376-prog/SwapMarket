@@ -123,12 +123,19 @@ const seedData = async () => {
 
     console.log('Items seeded successfully');
     console.log('Database seeding complete!');
-    process.exit(0);
-
+    if (require.main === module) {
+      process.exit(0);
+    }
   } catch (error) {
     console.error('Error seeding database:', error);
-    process.exit(1);
+    if (require.main === module) {
+      process.exit(1);
+    }
   }
 };
 
-seedData();
+if (require.main === module) {
+  seedData();
+}
+
+module.exports = seedData;

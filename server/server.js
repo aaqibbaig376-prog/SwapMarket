@@ -33,9 +33,17 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/favorites', favoriteRoutes);
 app.use('/api/notifications', notificationRoutes);
+const seedData = require('./seed');
+
 // Database connection and server start
-sequelize.sync({ alter: true }).then(() => {
+sequelize.sync({ force: true }).then(async () => {
   console.log('Database connected and synced');
+  try {
+    await seedData();
+    console.log('Database auto-seeded with fresh INR data!');
+  } catch (e) {
+    console.error('Auto-seed error:', e);
+  }
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
