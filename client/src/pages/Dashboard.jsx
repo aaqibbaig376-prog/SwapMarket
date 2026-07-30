@@ -122,7 +122,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div><label className="block text-sm mb-1">Estimated Value ($)</label><input required type="number" name="estimatedValue" className="input-field" onChange={handleChange} value={formData.estimatedValue} /></div>
+                <div><label className="block text-sm mb-1">Estimated Value (₹)</label><input required type="number" name="estimatedValue" className="input-field" onChange={handleChange} value={formData.estimatedValue} /></div>
                 <div><label className="block text-sm mb-1">Image URLs (comma separated)</label><input type="text" name="imageUrls" className="input-field" onChange={handleChange} value={formData.imageUrls} placeholder="https://img1, https://img2" /></div>
               </div>
               <div className="flex space-x-3 pt-4">

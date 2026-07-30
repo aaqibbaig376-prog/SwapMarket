@@ -134,7 +134,7 @@ const Home = () => {
                     <div className="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
                   )}
                   <div className="absolute bottom-2 left-2 bg-white px-2 py-1 rounded-md text-xs font-bold text-primary shadow">
-                    Est. ${item.estimatedValue}
+                    Est. ₹{item.estimatedValue}
                   </div>
                 </div>
                 <div className="p-4">

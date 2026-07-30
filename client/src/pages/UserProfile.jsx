@@ -67,7 +67,7 @@ const UserProfile = () => {
                     </div>
                     <div className="p-4">
                       <h3 className="font-semibold text-gray-800 truncate">{item.title}</h3>
-                      <p className="text-primary text-sm font-bold mt-1">${item.estimatedValue}</p>
+                      <p className="text-primary text-sm font-bold mt-1">₹{item.estimatedValue}</p>
                     </div>
                   </a>
                 )

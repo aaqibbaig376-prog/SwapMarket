@@ -116,7 +116,7 @@ const ItemDetail = () => {
             </div>
             <div className="bg-gray-50 p-3 rounded-lg">
               <span className="text-xs text-gray-500 uppercase font-bold">Est. Value</span>
-              <p className="font-semibold text-primary">${item.estimatedValue}</p>
+              <p className="font-semibold text-primary">₹{item.estimatedValue}</p>
             </div>
           </div>
 
@@ -175,7 +175,7 @@ const ItemDetail = () => {
                     />
                     <div>
                       <div className="font-semibold text-gray-800">{ui.title}</div>
-                      <div className="text-sm text-gray-500">Est. Value: ${ui.estimatedValue}</div>
+                      <div className="text-sm text-gray-500">Est. Value: ₹{ui.estimatedValue}</div>
                     </div>
                   </label>
                 ))}

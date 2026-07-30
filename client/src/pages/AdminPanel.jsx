@@ -134,7 +134,7 @@ const AdminPanel = () => {
                         {item.status}
                       </span>
                     </td>
-                    <td className="p-2">${item.estimatedValue}</td>
+                    <td className="p-2">₹{item.estimatedValue}</td>
                     <td className="p-2">
                       <button onClick={() => handleDeleteItem(item.id)} className="text-red-500 hover:text-red-700">
                         <FaTrash />

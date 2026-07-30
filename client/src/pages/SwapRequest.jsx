@@ -59,15 +59,13 @@ const SwapRequest = () => {
           <div className="text-center w-32">
             <div className="text-xs text-gray-500 uppercase font-bold mb-1">Your Item</div>
             <div className="font-semibold text-gray-800 truncate">{myItem?.title}</div>
-            <div className="text-sm text-primary">${myItem?.estimatedValue}</div>
+            <div className="text-sm text-primary">₹{myItem?.estimatedValue}</div>
           </div>
-          <div className="text-gray-400">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-          </div>
-          <div className="text-center w-32">
-            <div className="text-xs text-gray-500 uppercase font-bold mb-1">Their Item</div>
-            <div className="font-semibold text-gray-800 truncate">{theirItem?.title}</div>
-            <div className="text-sm text-primary">${theirItem?.estimatedValue}</div>
+          <div className="text-xl font-bold text-gray-400">⇄</div>
+          <div className="flex-1 bg-gray-50 p-3 rounded-lg text-center">
+            <div className="text-xs text-gray-500 font-semibold uppercase">Their Item</div>
+            <div className="font-bold text-gray-800 truncate">{theirItem?.title}</div>
+            <div className="text-sm text-primary">₹{theirItem?.estimatedValue}</div>
           </div>
           <div className="border-l border-gray-200 pl-6 flex-1">
             <div className="text-sm text-gray-500">
