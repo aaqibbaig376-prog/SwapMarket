@@ -19,6 +19,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Health Check Route
+app.get('/', (req, res) => {
+  res.json({ message: 'SwapMarket API Server is running successfully!' });
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
