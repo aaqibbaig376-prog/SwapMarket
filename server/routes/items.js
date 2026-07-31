@@ -74,7 +74,19 @@ router.put('/:id', auth, async (req, res) => {
       return res.status(403).json({ error: 'Not authorized to update this item' });
     }
 
-    await item.update(req.body);
+    const { title, description, type, brand, size, condition, estimatedValue, location, imageUrls, status } = req.body;
+    await item.update({
+      ...(title !== undefined && { title }),
+      ...(description !== undefined && { description }),
+      ...(type !== undefined && { type }),
+      ...(brand !== undefined && { brand }),
+      ...(size !== undefined && { size }),
+      ...(condition !== undefined && { condition }),
+      ...(estimatedValue !== undefined && { estimatedValue: Math.max(0, Number(estimatedValue)) }),
+      ...(location !== undefined && { location }),
+      ...(imageUrls !== undefined && { imageUrls }),
+      ...(status !== undefined && { status })
+    });
     res.json(item);
   } catch (error) {
     res.status(500).json({ error: 'Failed to update item' });
