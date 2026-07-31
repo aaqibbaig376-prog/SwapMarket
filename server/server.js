@@ -36,13 +36,20 @@ app.use('/api/notifications', notificationRoutes);
 const seedData = require('./seed');
 
 // Database connection and server start
-sequelize.sync({ force: true }).then(async () => {
+sequelize.sync({ alter: true }).then(async () => {
   console.log('Database connected and synced');
   try {
-    await seedData();
-    console.log('Database auto-seeded with fresh INR data!');
+    const { User } = require('./models');
+    const userCount = await User.count();
+    if (userCount === 0) {
+      console.log('Database empty, seeding default initial records...');
+      await seedData();
+      console.log('Database auto-seeded successfully!');
+    } else {
+      console.log('Existing database records preserved.');
+    }
   } catch (e) {
-    console.error('Auto-seed error:', e);
+    console.error('Auto-seed check error:', e);
   }
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
